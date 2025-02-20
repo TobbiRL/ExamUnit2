@@ -28,3 +28,13 @@ tests.isEqual(inchToMM(2), 50.8, "2 inch is 50.8mm")
 tests.isEqual(inchToMM(-1), -25.4, "-1 inch is -25.4mm")
 tests.isEqual(inchToMM(1.5), 38.1, "1.5 inch is 38.1mm")
 
+function root(n) {
+    return n**0.5;
+}
+
+tests.isEqual(root(49), 7, "root of 49 is 7")
+tests.isEqual(root(81), 9, "root of 81 is 9")
+tests.isEqual(root(40), 6.324, "root of 40 is 6.324")
+
+
+
