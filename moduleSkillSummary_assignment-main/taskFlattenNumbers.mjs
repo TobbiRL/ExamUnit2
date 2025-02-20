@@ -36,5 +36,12 @@ tests.isEqual(root(49), 7, "root of 49 is 7")
 tests.isEqual(root(81), 9, "root of 81 is 9")
 tests.isEqual(root(40), 6.324, "root of 40 is 6.324")
 
+function cube(n) {
+    return n**3
+}
+
+tests.isEqual(cube(2), 8, "2 cubed is 8")
+tests.isEqual(cube(-2), -8, "-2 cubed is -8")
+tests.isEqual(cube(1.7), 4.913, "1.7 cubed is 4.913")
 
 
