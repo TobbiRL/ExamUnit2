@@ -45,9 +45,14 @@ tests.isEqual(cube(-2), -8, "-2 cubed is -8")
 tests.isEqual(cube(1.7), 4.913, "1.7 cubed is 4.913")
 
 function areaOfCircle(r) {
+    if (r <= 0) {
+        return null
+    } else
     return r**2*3.14
+
 }
 
 tests.isEqual(areaOfCircle(1), 3.14, "area of a circle with radius 1 is 3.14")
 tests.isEqual(areaOfCircle(2), 12.56, "area of a circle with radius 2 is 12.56")
 tests.isEqual(areaOfCircle(321), 323548.74, "area of a circle with radius 321 is 323548.74")
+tests.isEqual(areaOfCircle(-1), null, "area of a circle with radius -1 is null")
