@@ -1,3 +1,5 @@
+import test from "./test.mjs";
+
 /*Create the following functions:
 
 A function that returns the square of a number
@@ -7,3 +9,14 @@ A function that returns the cube of a number
 A function that returns the area of a circle given the radius.
 A function that returns a greeting, given a name.
 */
+const tests = test("Testing function");
+
+function square(n) {
+    return n**2
+}
+
+tests.isEqual(square(2), 4, "2 squared is 4") 
+tests.isEqual(square(3), 9, "3 squared is 9") 
+tests.isEqual(square(-3), 9, "-3 squared is 9") 
+
+
