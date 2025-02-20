@@ -13,35 +13,35 @@ const tests = test("Testing functions");
 
 function square(n) {
     if (n * 1 !== n) {
-        return undefined
+        return undefined;
     } else
-    return n**2
-}
-console.log("Square tests")
-tests.isEqual(square(2), 4, "2 squared is 4") 
-tests.isEqual(square(3), 9, "3 squared is 9") 
-tests.isEqual(square(-3), 9, "-3 squared is 9") 
-tests.isEqual(square("test"), undefined, "Not a number") 
+    return n**2;
+};
+console.log("Square tests");
+tests.isEqual(square(2), 4, "2 squared is 4");
+tests.isEqual(square(3), 9, "3 squared is 9");
+tests.isEqual(square(-3), 9, "-3 squared is 9");
+tests.isEqual(square("test"), undefined, "Not a number"); 
 
 function inchToMM(inchesGiven) {
     if (inchesGiven * 1 !== inchesGiven) {
-        return undefined
+        return undefined;
     } else
-    return inchesGiven * 25.4
-}
-console.log("Inch to mm tests")
-tests.isEqual(inchToMM(1), 25.4, "1 inch is 25.4mm")
-tests.isEqual(inchToMM(2), 50.8, "2 inch is 50.8mm")
-tests.isEqual(inchToMM(-1), -25.4, "-1 inch is -25.4mm")
-tests.isEqual(inchToMM(1.5), 38.1, "1.5 inch is 38.1mm")
-tests.isEqual(inchToMM("test"), undefined, "Not a number")
+    return inchesGiven * 25.4;
+};
+console.log("Inch to mm tests");
+tests.isEqual(inchToMM(1), 25.4, "1 inch is 25.4mm");
+tests.isEqual(inchToMM(2), 50.8, "2 inch is 50.8mm");
+tests.isEqual(inchToMM(-1), -25.4, "-1 inch is -25.4mm");
+tests.isEqual(inchToMM(1.5), 38.1, "1.5 inch is 38.1mm");
+tests.isEqual(inchToMM("test"), undefined, "Not a number");
 
 function root(n) {
     if (n * 1 !== n) {
-        return undefined
+        return undefined;
     } else
     return n**0.5;
-}
+};
 
 console.log("Root tests")
 tests.isEqual(root(49), 7, "root of 49 is 7")
@@ -51,46 +51,44 @@ tests.isEqual(root("test"), undefined, "Not a number")
 
 function cube(n) {
     if (n * 1 !== n) {
-        return undefined
+        return undefined;
     } else
-    return n**3
-}
+    return n**3;
+};
 
-console.log("Cube tests")
-
-tests.isEqual(cube(2), 8, "2 cubed is 8")
-tests.isEqual(cube(-2), -8, "-2 cubed is -8")
-tests.isEqual(cube(1.7), 4.913, "1.7 cubed is 4.913")
-tests.isEqual(cube("test"), undefined, "Not a number")
+console.log("Cube tests");
+tests.isEqual(cube(2), 8, "2 cubed is 8");
+tests.isEqual(cube(-2), -8, "-2 cubed is -8");
+tests.isEqual(cube(1.7), 4.913, "1.7 cubed is 4.913");
+tests.isEqual(cube("test"), undefined, "Not a number");
 
 function areaOfCircle(r) {
     if (r <= 0 || r * 1 !== r) {
-        return null
+        return null;
     } else
-    return r**2*3.14
+    return r**2*3.14;
+};
 
-}
+console.log("Area circle tests");
+tests.isEqual(areaOfCircle(1), 3.14, "area of a circle with radius 1 is 3.14");
+tests.isEqual(areaOfCircle(2), 12.56, "area of a circle with radius 2 is 12.56");
+tests.isEqual(areaOfCircle(321), 323548.74, "area of a circle with radius 321 is 323548.74");
+tests.isEqual(areaOfCircle(-1), null, "area of a circle with radius -1 is null");
+tests.isEqual(areaOfCircle("test"), null, "Not a number");
 
-console.log("Area circle tests")
-tests.isEqual(areaOfCircle(1), 3.14, "area of a circle with radius 1 is 3.14")
-tests.isEqual(areaOfCircle(2), 12.56, "area of a circle with radius 2 is 12.56")
-tests.isEqual(areaOfCircle(321), 323548.74, "area of a circle with radius 321 is 323548.74")
-tests.isEqual(areaOfCircle(-1), null, "area of a circle with radius -1 is null")
-tests.isEqual(areaOfCircle("test"), null, "Not a number")
-
-console.log("Greeting name tests")
+console.log("Greeting name tests");
 function greetName(name) {
     if (name + "" !== name) {
-        return undefined
+        return undefined;
     } else
-    return "Nice to meet you " + name + "!"
-}
+    return "Nice to meet you " + name + "!";
+};
 
-tests.isEqual(greetName("Tobbi"), "Nice to meet you Tobbi!", "Greets correctly")
-tests.isEqual(greetName(1), undefined, "Not a name")
-tests.isEqual(greetName(""), "Nice to meet you !", "Greets correctly")
-tests.isEqual(greetName(), undefined, "Not a name")
-tests.isEqual(greetName("æ"), "Nice to meet you æ!", "Greets correctly")
+tests.isEqual(greetName("Tobbi"), "Nice to meet you Tobbi!", "Greets correctly");
+tests.isEqual(greetName(1), undefined, "Not a name");
+tests.isEqual(greetName(""), "Nice to meet you !", "Greets correctly");
+tests.isEqual(greetName(), undefined, "Not a name");
+tests.isEqual(greetName("æ"), "Nice to meet you æ!", "Greets correctly");
 
 function mathProcessAndGreeting(base, input) {
     if (base == square) {
@@ -111,11 +109,11 @@ function mathProcessAndGreeting(base, input) {
     else if (base == greetName) {
         return greetName(input)
     }
-}
+};
 
-tests.isEqual(mathProcessAndGreeting(square, 4), 16, "4 squared is 16")
-tests.isEqual(mathProcessAndGreeting(cube, 3), 27, "3 cubed is 27")
-tests.isEqual(mathProcessAndGreeting(inchToMM, 1), 25.4, "1 inch is 25.4mm")
-tests.isEqual(mathProcessAndGreeting(areaOfCircle, 4), 50.24, "area of a circle with 4 in r = 50.24")
-tests.isEqual(mathProcessAndGreeting(root, 36), 6, "The root of 36 is 6")
-tests.isEqual(mathProcessAndGreeting(greetName, "Roar"), "Nice to meet you Roar!", "Greets correctly")
+tests.isEqual(mathProcessAndGreeting(square, 4), 16, "4 squared is 16");
+tests.isEqual(mathProcessAndGreeting(cube, 3), 27, "3 cubed is 27");
+tests.isEqual(mathProcessAndGreeting(inchToMM, 1), 25.4, "1 inch is 25.4mm");
+tests.isEqual(mathProcessAndGreeting(areaOfCircle, 4), 50.24, "area of a circle with 4 in r = 50.24");
+tests.isEqual(mathProcessAndGreeting(root, 36), 6, "The root of 36 is 6");
+tests.isEqual(mathProcessAndGreeting(greetName, "Roar"), "Nice to meet you Roar!", "Greets correctly");
