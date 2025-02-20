@@ -93,24 +93,29 @@ tests.isEqual(greetName(), undefined, "Not a name")
 tests.isEqual(greetName("æ"), "Nice to meet you æ!", "Greets correctly")
 
 function mathProcessAndGreeting(base, input) {
-    if (base = square) {
+    if (base == square) {
         return square(input)
     }
-    else if (base = inchToMM) {
+    else if (base == inchToMM) {
         return inchToMM(input)
     }
-    else if (base = root) {
+    else if (base == root) {
         return root(input)
     }
-    else if (base = cube) {
+    else if (base == cube) {
         return cube(input)
     }
-    else if (base = areaOfCircle) {
+    else if (base == areaOfCircle) {
         return areaOfCircle(input)
     }
-    else if (base = greetName) {
+    else if (base == greetName) {
         return greetName(input)
     }
 }
 
 tests.isEqual(mathProcessAndGreeting(square, 4), 16, "4 squared is 16")
+tests.isEqual(mathProcessAndGreeting(cube, 3), 27, "3 cubed is 27")
+tests.isEqual(mathProcessAndGreeting(inchToMM, 1), 25.4, "1 inch is 25.4mm")
+tests.isEqual(mathProcessAndGreeting(areaOfCircle, 4), 50.24, "area of a circle with 4 in r = 50.24")
+tests.isEqual(mathProcessAndGreeting(root, 36), 6, "The root of 36 is 6")
+tests.isEqual(mathProcessAndGreeting(greetName, "Roar"), "Nice to meet you Roar!", "Greets correctly")
