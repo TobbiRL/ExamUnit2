@@ -91,3 +91,26 @@ tests.isEqual(greetName(1), undefined, "Not a name")
 tests.isEqual(greetName(""), "Nice to meet you !", "Greets correctly")
 tests.isEqual(greetName(), undefined, "Not a name")
 tests.isEqual(greetName("æ"), "Nice to meet you æ!", "Greets correctly")
+
+function mathProcessAndGreeting(base, input) {
+    if (base = square) {
+        square(input)
+    }
+    else if (base = inchToMM) {
+        inchToMM(input)
+    }
+    else if (base = root) {
+        root(input)
+    }
+    else if (base = cube) {
+        cube(input)
+    }
+    else if (base = areaOfCircle) {
+        areaOfCircle(input)
+    }
+    else if (base = greetName) {
+        greetName(input)
+    }
+}
+
+tests.isEqual(mathProcessAndGreeting(square, 4), 16, "4 squared is 16")
