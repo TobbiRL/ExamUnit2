@@ -92,22 +92,22 @@ tests.isEqual(greetName("æ"), "Nice to meet you æ!", "Greets correctly");
 
 function mathProcessAndGreeting(base, input) {
     if (base == square) {
-        return square(input)
+        return square(input);
     }
     else if (base == inchToMM) {
-        return inchToMM(input)
+        return inchToMM(input);
     }
     else if (base == root) {
-        return root(input)
+        return root(input);
     }
     else if (base == cube) {
-        return cube(input)
+        return cube(input);
     }
     else if (base == areaOfCircle) {
-        return areaOfCircle(input)
+        return areaOfCircle(input);
     }
     else if (base == greetName) {
-        return greetName(input)
+        return greetName(input);
     }
 };
 
