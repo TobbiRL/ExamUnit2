@@ -77,3 +77,11 @@ tests.isEqual(areaOfCircle(2), 12.56, "area of a circle with radius 2 is 12.56")
 tests.isEqual(areaOfCircle(321), 323548.74, "area of a circle with radius 321 is 323548.74")
 tests.isEqual(areaOfCircle(-1), null, "area of a circle with radius -1 is null")
 tests.isEqual(areaOfCircle("test"), null, "Not a number")
+
+console.log("Greeting name tests")
+function greetName(name) {
+    return "Nice to meet you " + name + "!"
+}
+
+tests.isEqual(greetName("Tobbi"), "Nice to meet you Tobbi!", "Greets correctly")
+tests.isEqual(greetName(1), undefined, "Not a name")
