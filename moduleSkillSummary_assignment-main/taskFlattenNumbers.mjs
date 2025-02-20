@@ -88,5 +88,6 @@ function greetName(name) {
 
 tests.isEqual(greetName("Tobbi"), "Nice to meet you Tobbi!", "Greets correctly")
 tests.isEqual(greetName(1), undefined, "Not a name")
-tests.isEqual(greetName(""), "Nice to meet you !", "Correct, but weird")
+tests.isEqual(greetName(""), "Nice to meet you !", "Greets correctly")
 tests.isEqual(greetName(), undefined, "Not a name")
+tests.isEqual(greetName("æ"), "Nice to meet you æ!", "Greets correctly")
