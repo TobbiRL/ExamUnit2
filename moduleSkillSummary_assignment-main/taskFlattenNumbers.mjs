@@ -80,8 +80,13 @@ tests.isEqual(areaOfCircle("test"), null, "Not a number")
 
 console.log("Greeting name tests")
 function greetName(name) {
+    if (name + "" !== name) {
+        return undefined
+    } else
     return "Nice to meet you " + name + "!"
 }
 
 tests.isEqual(greetName("Tobbi"), "Nice to meet you Tobbi!", "Greets correctly")
 tests.isEqual(greetName(1), undefined, "Not a name")
+tests.isEqual(greetName(""), "Nice to meet you !", "Correct, but weird")
+tests.isEqual(greetName(), undefined, "Not a name")
