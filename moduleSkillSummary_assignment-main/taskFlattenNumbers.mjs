@@ -90,12 +90,12 @@ let flattenedArray = [];
 let i = 0;
 
     while (array[i] !== undefined) {
-      let word = array[i];
+      let element = array[i];
 
-      if (word && word.length !== undefined) {
-        flattenedArray = word
+      if (element && element.length !== undefined) {
+        flattenedArray = element
       } else {
-        flattenedArray[flattenedArray.length] = word
+        flattenedArray[flattenedArray.length] = element
       }
     i++
     }
