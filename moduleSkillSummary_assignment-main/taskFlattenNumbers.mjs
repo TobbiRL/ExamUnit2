@@ -83,14 +83,26 @@ const arrayToFlatten = [
     4223
 ];
 
+const testArray = [1, 2, [3, 4, 5], 6, 7];
+
 function flattenArray(array) {
+let flattenedArray = [];
+let i = 0;
 
+    while (array[i] !== undefined) {
+      let word = array[i];
 
-
+      if (word && word.length !== undefined) {
+        flattenedArray = word
+      } else {
+        flattenedArray[flattenedArray.length] = word
+      }
+    i++
+    }
+return flattenedArray;
 }
 
 
 const tests = test("Array tests");
 
-
-
+tests.isEqual(flattenArray(testArray), [1,2,3,4,5,6,7], "Array works and is flattened as expected");
