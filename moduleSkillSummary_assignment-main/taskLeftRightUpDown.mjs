@@ -41,17 +41,16 @@ const testNode = {
 
 function structureData(node, depth) {
     if (node == null) {
-        return { sum: 0, deepestLevel: depth, nodes: 0}
+        return { sum: 0, deepestLevel: depth, nodes: 0};
     }
 
-
-    
-
-
+    let leftValues;
+    let rightValues;
+    let deepestLevelReached = depth;
 
     return {
         sum,
         deepestLevel,
         Nodes,
-    }
+    };
 }
