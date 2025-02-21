@@ -83,17 +83,16 @@ const arrayToFlatten = [
     4223
 ];
 
-const testArray = [1, 2, [3, 4, 5], 6, 7];
+const testArray = [1, 2, [3, [4], 5], 6, 7];
 
-function flattenArray(array) {
-let flattenedArray = [];
+function flattenArray(array, flattenedArray = []) {
 let i = 0;
 
     while (array[i] !== undefined) {
       let element = array[i];
 
       if (element && element.length !== undefined) {
-        flattenedArray = element
+          flattenArray(element, flattenedArray)
       } else {
         flattenedArray[flattenedArray.length] = element
       }
@@ -102,7 +101,6 @@ let i = 0;
 return flattenedArray;
 }
 
-
 const tests = test("Array tests");
 
-tests.isEqual(flattenArray(testArray), [1,2,3,4,5,6,7], "Array works and is flattened as expected");
+tests.isEqual(flattenArray(testArray), [1,2,3,4,5,6,7], "Array is flattened as expected");
