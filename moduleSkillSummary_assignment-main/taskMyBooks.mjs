@@ -753,4 +753,21 @@ let numberOfBooks = 0;
     return numberOfBooks
 }
 
+console.log("Test books after year")
 console.log(booksAfterSetYear(books, 1992))
+
+function booksBeforeSetYear (bookList, year) {
+    let i = 0;
+    let numberOfBooks = 0;
+    
+        while (bookList[i] !== undefined) { 
+            if (bookList[i].publication_year < year) {
+                numberOfBooks++
+            }
+        i++
+        }   
+        return numberOfBooks
+    }
+    
+    console.log("Test books before year")
+    console.log(booksBeforeSetYear(books, 2004))
