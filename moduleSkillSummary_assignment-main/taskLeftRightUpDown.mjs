@@ -40,9 +40,9 @@ const testNode = {
     }
   }
 
-function structureData(node, depth) {
+function structureData(node, depth = 0) {
     if (node == null) {
-        return { sum: 0, deepestLevel: depth, nodes: 0};
+        return { sum: 0, deepestLevel: depth - 1, nodes: 0};
     }
 
     let leftValues = structureData(node.left, depth + 1);
