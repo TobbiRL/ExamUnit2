@@ -745,9 +745,9 @@ let i = 0;
 let numberOfBooks = 0;
 
     while (bookList[i] !== undefined) { 
-      if (bookList[i] > year) {
-        numberOfBooks++
-      }
+        if (bookList[i].year > year) {
+            numberOfBooks++
+        }
     i++
     }   
     return numberOfBooks
