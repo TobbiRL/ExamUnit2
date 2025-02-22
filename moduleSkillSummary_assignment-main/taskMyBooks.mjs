@@ -771,3 +771,17 @@ function booksBeforeSetYear (bookList, year) {
     
     console.log("Test books before year")
     console.log(booksBeforeSetYear(books, 2004))
+
+function returnIBN(bookList, author) {
+let authorsISBN = [];
+let i = 0;
+    while (bookList[i] !== undefined) { 
+        if (bookList[i].author == author) {
+            authorsISBN[authorsISBN.length] = bookList[i].isbn;
+        }
+        i++
+    } return authorsISBN
+}
+console.log("ISBN number by author")
+console.log(returnIBN(books, "Terry Pratchett"))
+
