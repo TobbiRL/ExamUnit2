@@ -745,7 +745,7 @@ let i = 0;
 let numberOfBooks = 0;
 
     while (bookList[i] !== undefined) { 
-        if (bookList[i].year > year) {
+        if (bookList[i].publication_year > year) {
             numberOfBooks++
         }
     i++
