@@ -717,5 +717,28 @@ let i = 0;
             i++
     } return booksWithThe
 }
-
+console.log("Books starting with The")
 console.log(returnBooksStartingWithThe(books))
+
+function booksByAuthorsWithLetterT(bookList) {
+let authorsWithT = [];
+let i = 0;
+    while (bookList[i] !== undefined) { 
+        let j = 0;
+        let authors = bookList[i].author;
+            while (authors[j] !== undefined) {
+                if (authors[j] == "t" || authors[j] == "T") {
+                    authorsWithT[authorsWithT.length] = bookList[i];
+                }
+                j++
+        }
+        
+        i++
+    } return authorsWithT
+}
+
+console.log("Letter T tests")
+console.log(booksByAuthorsWithLetterT(books))
+
+
+
