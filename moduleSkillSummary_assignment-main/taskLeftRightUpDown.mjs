@@ -40,7 +40,7 @@ const testNode = {
     }
   }
 
-function structureData(node, depth = 0) {
+function structureData(node, depth = 1) {
     if (node == null) {
         return { sum: 0, deepestLevel: depth - 1, nodes: 0};
     }
@@ -50,7 +50,12 @@ function structureData(node, depth = 0) {
     
     let deepestLevelReached = depth;
 
-
+    if (leftValues.deepestLevel > deepestLevelReached) {
+        deepestLevelReached = leftValues.deepestLevel;
+    }
+    if (rightValues.deepestLevel > deepestLevelReached) {
+        deepestLevelReached = rightValues.deepestLevel;
+    }
 
     return {
         sum: node.value + leftValues.sum + rightValues.sum,
