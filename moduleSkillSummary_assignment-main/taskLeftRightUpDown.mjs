@@ -1,6 +1,7 @@
 /*
 
-In the file nodes.json there is an example of a data structure that has a value of type integer, but also a left and right variable that could be a object of the same type. If you need more test data you can get as much as you want from this source
+In the file nodes.json there is an example of a data structure that has a value of type integer, but also a left and right variable that 
+could be a object of the same type. If you need more test data you can get as much as you want from this source
 
 Calculate the sum of the full structure.
 Report the deepest level of the structure.
@@ -44,13 +45,18 @@ function structureData(node, depth) {
         return { sum: 0, deepestLevel: depth, nodes: 0};
     }
 
-    let leftValues;
-    let rightValues;
+    let leftValues = structureData(node.left, depth + 1);
+    let rightValues = structureData(node.right, depth + 1);
+    
     let deepestLevelReached = depth;
 
+
+
     return {
-        sum,
-        deepestLevel,
-        Nodes,
+        sum: node.value + leftValues.sum + rightValues.sum,
+        deepestLevel: deepestLevelReached,
+        Nodes: leftValues.nodes + rightValues.nodes,
     };
 }
+
+console.log(structureData(testNode))
