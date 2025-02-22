@@ -55,7 +55,7 @@ function structureData(node, depth = 0) {
     return {
         sum: node.value + leftValues.sum + rightValues.sum,
         deepestLevel: deepestLevelReached,
-        Nodes: leftValues.nodes + rightValues.nodes,
+        Nodes: 1 + leftValues.nodes + rightValues.nodes,
     };
 }
 
