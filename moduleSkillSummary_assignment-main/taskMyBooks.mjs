@@ -729,6 +729,7 @@ let i = 0;
             while (authors[j] !== undefined) {
                 if (authors[j] == "t" || authors[j] == "T") {
                     authorsWithT[authorsWithT.length] = bookList[i];
+                    break
                 }
                 j++
         }
