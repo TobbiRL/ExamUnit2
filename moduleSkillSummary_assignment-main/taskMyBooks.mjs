@@ -726,14 +726,13 @@ let i = 0;
     while (bookList[i] !== undefined) { 
         let j = 0;
         let authors = bookList[i].author;
-            while (authors[j] !== undefined) {
-                if (authors[j] == "t" || authors[j] == "T") {
+        while (authors[j] !== undefined) {
+            if (authors[j] == "t" || authors[j] == "T") {
                     authorsWithT[authorsWithT.length] = bookList[i];
                     break
-                }
-                j++
+            }
+            j++
         }
-        
         i++
     } return authorsWithT
 }
@@ -741,5 +740,17 @@ let i = 0;
 console.log("Letter T tests")
 console.log(booksByAuthorsWithLetterT(books))
 
+function booksAfterSetYear (bookList, year) {
+let i = 0;
+let numberOfBooks = 0;
 
+    while (bookList[i] !== undefined) { 
+      if (bookList[i] > year) {
+        numberOfBooks++
+      }
+    i++
+    }   
+    return numberOfBooks
+}
 
+console.log(booksAfterSetYear(books, 1992))
