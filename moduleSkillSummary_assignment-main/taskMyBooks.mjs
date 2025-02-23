@@ -785,3 +785,100 @@ let i = 0;
 console.log("ISBN number by author")
 console.log(returnIBN(books, "Terry Pratchett"))
 
+function bookAscending(bookList) {
+    let sortedBooks = [];
+    let i = 0;
+    while (bookList[i] !== undefined) {
+        sortedBooks[i] = bookList[i];
+        i++;
+    }
+    
+    let sortedBooksLength = 0;
+    while (sortedBooks[sortedBooksLength] !== undefined) {
+        sortedBooksLength++;
+    }
+    
+    for (let i = 0; i < sortedBooksLength - 1; i++) {
+        for (let j = 0; j < sortedBooksLength - i - 1; j++) {
+            let title1 = sortedBooks[j].title;
+            let title2 = sortedBooks[j + 1].title;
+            
+            let k = 0;
+            let bookShouldMove = false;
+            
+            while (title1[k] !== undefined && title2[k] !== undefined) {
+                if (title1[k] > title2[k]) {
+                    bookShouldMove = true;
+                    break;
+                } else if (title1[k] < title2[k]) {
+                    break;
+                }
+                k++;
+            }
+            
+            if (!bookShouldMove && title2[k] == undefined && title1[k] !== undefined) {
+                bookShouldMove = true;
+            }
+            
+            if (bookShouldMove) {
+                let current = sortedBooks[j];
+                sortedBooks[j] = sortedBooks[j + 1];
+                sortedBooks[j + 1] = current;
+            }
+        }
+    }
+    
+    return sortedBooks;
+}
+
+console.log("Ascending Test")
+console.log(bookAscending(books))
+
+function bookDescending(bookList) {
+    let sortedBooks = [];
+    let i = 0;
+    while (bookList[i] !== undefined) {
+        sortedBooks[i] = bookList[i];
+        i++;
+    }
+    
+    let sortedBooksLength = 0;
+    while (sortedBooks[sortedBooksLength] !== undefined) {
+        sortedBooksLength++;
+    }
+    
+    for (let i = 0; i < sortedBooksLength - 1; i++) {
+        for (let j = 0; j < sortedBooksLength - i - 1; j++) {
+            let title1 = sortedBooks[j].title;
+            let title2 = sortedBooks[j + 1].title;
+            
+            let k = 0;
+            let bookShouldMove = false;
+            
+            while (title1[k] !== undefined && title2[k] !== undefined) {
+                if (title1[k] < title2[k]) {
+                    bookShouldMove = true;
+                    break;
+                } else if (title1[k] > title2[k]) {
+                    break;
+                }
+                k++;
+            }
+            
+            if (!bookShouldMove && title2[k] == undefined && title1[k] !== undefined) {
+                bookShouldMove = true;
+            }
+            
+            if (bookShouldMove) {
+                let current = sortedBooks[j];
+                sortedBooks[j] = sortedBooks[j + 1];
+                sortedBooks[j + 1] = current;
+            }
+        }
+    }
+    
+    return sortedBooks;
+}
+
+console.log("Descend test");
+console.log(bookDescending(books));
