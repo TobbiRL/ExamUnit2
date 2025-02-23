@@ -64,4 +64,4 @@ function structureData(node, depth = 1) {
     };
 }
 
-console.log(structureData(testNode))
+console.log(structureData(testNode));

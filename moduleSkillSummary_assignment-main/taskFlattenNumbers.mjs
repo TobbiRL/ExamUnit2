@@ -92,11 +92,11 @@ let i = 0;
       let element = array[i];
 
       if (element && element.length !== undefined) {
-          flattenArray(element, flattenedArray)
+          flattenArray(element, flattenedArray);
       } else {
-        flattenedArray[flattenedArray.length] = element
+        flattenedArray[flattenedArray.length] = element;
       }
-    i++
+    i++;
     }
 return flattenedArray;
 }

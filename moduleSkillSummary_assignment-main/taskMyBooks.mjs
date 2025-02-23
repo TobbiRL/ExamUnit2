@@ -718,8 +718,8 @@ let i = 0;
     } return booksWithThe;
 }
 /*
-console.log("Books starting with The")
-console.log(returnBooksStartingWithThe(books))
+console.log("Books starting with The");
+console.log(returnBooksStartingWithThe(books));
 */
 function booksByAuthorsWithLetterT(bookList) {
 let authorsWithT = [];
@@ -738,8 +738,8 @@ let i = 0;
     } return authorsWithT;
 }
 /*
-console.log("Letter T tests")
-console.log(booksByAuthorsWithLetterT(books))
+console.log("Letter T tests");
+console.log(booksByAuthorsWithLetterT(books));
 */
 
 function booksAfterSetYear (bookList, year) {
@@ -755,8 +755,8 @@ let numberOfBooks = 0;
     return numberOfBooks;
 }
 /*
-console.log("Test books after year")
-console.log(booksAfterSetYear(books, 1992))
+console.log("Test books after year");
+console.log(booksAfterSetYear(books, 1992));
 */
 
 function booksBeforeSetYear (bookList, year) {
@@ -773,8 +773,8 @@ function booksBeforeSetYear (bookList, year) {
     }
 
 /*
-console.log("Test books before year")
-console.log(booksBeforeSetYear(books, 2004))
+console.log("Test books before year");
+console.log(booksBeforeSetYear(books, 2004));
 */
 
 function returnIBN(bookList, author) {
@@ -788,8 +788,8 @@ let i = 0;
     } return authorsISBN;
 }
 /*
-console.log("ISBN number by author")
-console.log(returnIBN(books, "Terry Pratchett"))
+console.log("ISBN number by author");
+console.log(returnIBN(books, "Terry Pratchett"));
 */
 
 function bookAscending(bookList) {
@@ -838,8 +838,8 @@ function bookAscending(bookList) {
     return sortedBooks;
 }
 /*
-console.log("Ascending Test")
-console.log(bookAscending(books))
+console.log("Ascending Test");
+console.log(bookAscending(books));
 */
 
 function bookDescending(bookList) {
@@ -922,8 +922,8 @@ function bookAscendingYear(bookList) {
     return sortedBooks;
 }
 /*
-console.log("Ascending year")
-console.log(bookAscendingYear(books))
+console.log("Ascending year");
+console.log(bookAscendingYear(books));
 */
 
 function bookDescendingYear(bookList) {
@@ -956,8 +956,8 @@ function bookDescendingYear(bookList) {
     return sortedBooks;
 }
 /*
-console.log("Descending Year")
-console.log(bookDescendingYear(books))
+console.log("Descending Year");
+console.log(bookDescendingYear(books));
 */
 
 function groupBooksByFirstName(bookList) {
@@ -1012,8 +1012,8 @@ function groupBooksByFirstName(bookList) {
     return sortedBooks;
 }
 /*
-console.log("first name groups")
-console.log(groupBooksByFirstName(books))
+console.log("first name groups");
+console.log(groupBooksByFirstName(books));
 */
 function groupBooksByLastName(bookList) {
     let sortedBooks = [];
@@ -1086,6 +1086,6 @@ function groupBooksByLastName(bookList) {
     return sortedBooks;
 }
 /*
-console.log("Last name groups")
-console.log(groupBooksByLastName(books))
+console.log("Last name groups");
+console.log(groupBooksByLastName(books));
 */
