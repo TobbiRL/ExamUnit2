@@ -974,6 +974,7 @@ function groupBooksByFirstName(bookList) {
             j++;
         }
         let k = 0;
+        let authorGroupExists = false;
 
         while (sortedBooks[k] !== undefined) {
             let existingAuthor = sortedBooks[k][0].author;
@@ -997,11 +998,93 @@ function groupBooksByFirstName(bookList) {
 
                 if (exists) {
                     sortedBooks[k][sortedBooks[k].length] = books[i];
+                    authorGroupExists = true
                     break;
                 }
                 k++;
         }
+        if (!authorGroupExists) {
+            sortedBooks[sortedBooks.length] = [books[i]];
+        }
+
+        i++;
     }
     return sortedBooks
 }
+/*
+console.log("first name groups")
 console.log(groupBooksByFirstName(books))
+*/
+function groupBooksByLastName(bookList) {
+    let sortedBooks = [];
+    let i = 0;
+
+    while (bookList[i] !== undefined) {
+        let author = books[i].author;
+        let lastSpaceIndex = -1;
+        let j = 0;
+
+        while (author[j] !== undefined) {
+            if (author[j] == " ") {
+                lastSpaceIndex = j;
+            }
+            j++;
+        }
+
+        let lastName = "";
+        j = lastSpaceIndex + 1;
+        while (author[j] !== undefined) {
+            lastName = lastName + author[j];
+            j++;
+        }
+
+        let k = 0;
+        let authorGroupExists = false;
+        while (sortedBooks[k] !== undefined) {
+            let existingAuthor = sortedBooks[k][0].author;
+            let existingLastName = "";
+            let m = 0;
+            let lastSpaceExisting = -1;
+
+            while (existingAuthor[m] !== undefined) {
+                if (existingAuthor[m] == " ") {
+                    lastSpaceExisting = m;
+                }
+                m++;
+            }
+
+            m = lastSpaceExisting + 1;
+            while (existingAuthor[m] !== undefined) {
+                existingLastName = existingLastName + existingAuthor[m];
+                m++;
+            }
+
+            let n = 0;
+            let exists = true;
+            while (lastName[n] !== undefined || existingLastName[n] !== undefined) {
+                if (lastName[n] !== existingLastName[n]) {
+                    exists = false;
+                    break;
+                }
+                n++;
+            }
+
+            if (exists) {
+                sortedBooks[k][sortedBooks[k].length] = bookList[i];
+                authorGroupExists = true;
+                break;
+            }
+            k++;
+        }
+
+        if (!authorGroupExists) {
+            sortedBooks[sortedBooks.length] = [bookList[i]];
+        }
+
+        i++;
+    }
+    return sortedBooks;
+}
+
+console.log("Last name groups")
+console.log(groupBooksByLastName(books))
