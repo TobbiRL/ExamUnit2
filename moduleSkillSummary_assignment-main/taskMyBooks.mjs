@@ -959,3 +959,22 @@ function bookDescendingYear(bookList) {
 console.log("Descending Year")
 console.log(bookDescendingYear(books))
 */
+
+function groupBooksByFirstName(bookList) {
+    let sortedBooks = [];
+    let i = 0;
+
+    while (bookList[i] !== undefined) {
+        let author = bookList[i].author;
+        let firstName = "";
+        let j = 0;
+
+        while (author[j] !== " " && author[j] !== undefined) {
+            firstName = firstName + author[j];
+            j++;
+        }
+    }
+
+}
+
+console.log(groupBooksByFirstName(books))
