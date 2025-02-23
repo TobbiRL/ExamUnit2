@@ -715,7 +715,7 @@ let i = 0;
                 booksWithThe[booksWithThe.length] = bookList[i];
             }
             i++
-    } return booksWithThe
+    } return booksWithThe;
 }
 /*
 console.log("Books starting with The")
@@ -732,10 +732,10 @@ let i = 0;
                     authorsWithT[authorsWithT.length] = bookList[i];
                     break
             }
-            j++
+            j++;
         }
-        i++
-    } return authorsWithT
+        i++;
+    } return authorsWithT;
 }
 /*
 console.log("Letter T tests")
@@ -748,11 +748,11 @@ let numberOfBooks = 0;
 
     while (bookList[i] !== undefined) { 
         if (bookList[i].publication_year > year) {
-            numberOfBooks++
+            numberOfBooks++;
         }
-    i++
+    i++;
     }   
-    return numberOfBooks
+    return numberOfBooks;
 }
 /*
 console.log("Test books after year")
@@ -765,11 +765,11 @@ function booksBeforeSetYear (bookList, year) {
     
         while (bookList[i] !== undefined) { 
             if (bookList[i].publication_year < year) {
-                numberOfBooks++
+                numberOfBooks++;
             }
-        i++
+        i++;
         }   
-        return numberOfBooks
+        return numberOfBooks;
     }
 
 /*
@@ -784,8 +784,8 @@ let i = 0;
         if (bookList[i].author == author) {
             authorsISBN[authorsISBN.length] = bookList[i].isbn;
         }
-        i++
-    } return authorsISBN
+        i++;
+    } return authorsISBN;
 }
 /*
 console.log("ISBN number by author")
@@ -998,7 +998,7 @@ function groupBooksByFirstName(bookList) {
 
                 if (exists) {
                     sortedBooks[k][sortedBooks[k].length] = books[i];
-                    authorGroupExists = true
+                    authorGroupExists = true;
                     break;
                 }
                 k++;
@@ -1009,7 +1009,7 @@ function groupBooksByFirstName(bookList) {
 
         i++;
     }
-    return sortedBooks
+    return sortedBooks;
 }
 /*
 console.log("first name groups")
@@ -1085,6 +1085,7 @@ function groupBooksByLastName(bookList) {
     }
     return sortedBooks;
 }
-
+/*
 console.log("Last name groups")
 console.log(groupBooksByLastName(books))
+*/
