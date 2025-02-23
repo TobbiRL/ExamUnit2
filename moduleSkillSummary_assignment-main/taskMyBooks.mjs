@@ -717,9 +717,10 @@ let i = 0;
             i++
     } return booksWithThe
 }
+/*
 console.log("Books starting with The")
 console.log(returnBooksStartingWithThe(books))
-
+*/
 function booksByAuthorsWithLetterT(bookList) {
 let authorsWithT = [];
 let i = 0;
@@ -736,9 +737,10 @@ let i = 0;
         i++
     } return authorsWithT
 }
-
+/*
 console.log("Letter T tests")
 console.log(booksByAuthorsWithLetterT(books))
+*/
 
 function booksAfterSetYear (bookList, year) {
 let i = 0;
@@ -752,9 +754,10 @@ let numberOfBooks = 0;
     }   
     return numberOfBooks
 }
-
+/*
 console.log("Test books after year")
 console.log(booksAfterSetYear(books, 1992))
+*/
 
 function booksBeforeSetYear (bookList, year) {
     let i = 0;
@@ -768,9 +771,11 @@ function booksBeforeSetYear (bookList, year) {
         }   
         return numberOfBooks
     }
-    
-    console.log("Test books before year")
-    console.log(booksBeforeSetYear(books, 2004))
+
+/*
+console.log("Test books before year")
+console.log(booksBeforeSetYear(books, 2004))
+*/
 
 function returnIBN(bookList, author) {
 let authorsISBN = [];
@@ -782,8 +787,10 @@ let i = 0;
         i++
     } return authorsISBN
 }
+/*
 console.log("ISBN number by author")
 console.log(returnIBN(books, "Terry Pratchett"))
+*/
 
 function bookAscending(bookList) {
     let sortedBooks = [];
@@ -830,9 +837,10 @@ function bookAscending(bookList) {
     
     return sortedBooks;
 }
-
+/*
 console.log("Ascending Test")
 console.log(bookAscending(books))
+*/
 
 function bookDescending(bookList) {
     let sortedBooks = [];
@@ -879,6 +887,75 @@ function bookDescending(bookList) {
     
     return sortedBooks;
 }
-
+/*
 console.log("Descend test");
 console.log(bookDescending(books));
+*/
+
+function bookAscendingYear(bookList) {
+    let sortedBooks = [];
+    let i = 0;
+
+    while (bookList[i] !== undefined) {
+        sortedBooks[i] = bookList[i];
+        i++;
+    }
+
+    let sortedBooksLength = 0;
+    while (sortedBooks[sortedBooksLength] !== undefined) {
+        sortedBooksLength++;
+    }
+
+    for (let i = 0; i < sortedBooksLength - 1; i++) {
+        for (let j = 0; j < sortedBooksLength - i - 1; j++) {
+            let publishYear1 = sortedBooks[j].publication_year;
+            let publishYear2 = sortedBooks[j + 1].publication_year;
+
+            if (publishYear1 > publishYear2) {
+                let current = sortedBooks[j];
+                sortedBooks[j] = sortedBooks[j + 1];
+                sortedBooks[j + 1] = current;
+            }
+        }
+    }
+
+    return sortedBooks;
+}
+/*
+console.log("Ascending year")
+console.log(bookAscendingYear(books))
+*/
+
+function bookDescendingYear(bookList) {
+    let sortedBooks = [];
+    let i = 0;
+
+    while (bookList[i] !== undefined) {
+        sortedBooks[i] = bookList[i];
+        i++;
+    }
+
+    let sortedBooksLength = 0;
+    while (sortedBooks[sortedBooksLength] !== undefined) {
+        sortedBooksLength++;
+    }
+
+    for (let i = 0; i < sortedBooksLength - 1; i++) {
+        for (let j = 0; j < sortedBooksLength - i - 1; j++) {
+            let publishYear1 = sortedBooks[j].publication_year;
+            let publishYear2 = sortedBooks[j + 1].publication_year;
+
+            if (publishYear1 < publishYear2) {
+                let current = sortedBooks[j];
+                sortedBooks[j] = sortedBooks[j + 1];
+                sortedBooks[j + 1] = current;
+            }
+        }
+    }
+
+    return sortedBooks;
+}
+/*
+console.log("Descending Year")
+console.log(bookDescendingYear(books))
+*/
