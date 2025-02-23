@@ -973,8 +973,19 @@ function groupBooksByFirstName(bookList) {
             firstName = firstName + author[j];
             j++;
         }
+    let k = 0;
+
+    while (sortedBooks[k] !== undefined) {
+        let existingAuthor = sortedBooks[k][0].author;
+        let existingFirstName = "";
+    
+        let m = 0;
+
+        while (existingAuthor[m] !== " " && existingAuthor[m] !== undefined) {
+            existingFirstName = existingFirstName + existingAuthor[m];
+            m++;
+        }
     }
-
 }
-
+}
 console.log(groupBooksByFirstName(books))
